@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<content id="home" view="home.phtml">
+		<title><![CDATA[Home]]></title>
+		<description><![CDATA[This is a simple PHP-based MVC framework using XML for content management]]></description>
+	</content>
+	
+	<content id="hello-world" view="hello-world.phtml">
+		<title><![CDATA[Hello, world!]]></title>
+		<hello><![CDATA[Hello, world!]]></hello>
+	</content>
+</data>

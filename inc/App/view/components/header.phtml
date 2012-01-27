@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+	<base href="http://<?=$base_href?>"/>
+	<title><?=$nav['title']?>&nbsp;-&nbsp;<?=strip_tags($title)?></title>
+</head>
+
+<!-- Page id applied as body class for page-specific CSS rules -->
+<body class="<?=$id?>">
+	
+	<!-- Site title / homepage link -->
+	<h1><a href=".<?=$nav['href']?>"><?=$nav['title']?></a></h1>
+	
+	<!-- Nav -->
+	<ul>
+		<? foreach($nav['page'] as $page): ?>
+			<li>
+				<a href="<?=$page['href']?>"><?=$page['title']?></a>
+				<? if(isset($page['page'])): ?>
+					<ul>
+						<? foreach($page['page'] as $subpage): ?>
+							<li><a href="<?=$subpage['href']?>"><?=$subpage['title']?></a></li>
+						<? endforeach; ?>
+					</ul>
+				<? endif; ?>
+			</li>
+		<? endforeach; ?>
+	</ul>

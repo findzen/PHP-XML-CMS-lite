@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sitemap>
+	<page id="home" href="/" title="Site name">
+		<page href="redirect-example" redirect="hello-world" title="Redirect example"/>
+		<page id="hello-world" href="hello-world" title="Hello, world!"/>
+	</page>
+</sitemap>
