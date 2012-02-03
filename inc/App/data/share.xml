@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<content id="default">
+		<open-graph>
+			<title><![CDATA[Default]]></title>
+			<description><![CDATA[Description]]></description>
+			<image><![CDATA[http://path.to.image]]></image>
+			<url><![CDATA[http://example.com]]></url>
+			<type><![CDATA[movie]]></type>
+			<video><![CDATA[http://path.to.video]]></video>
+			<video-width>1234</video-width>
+			<video-height>4321</video-height>
+		</open-graph>
+		<twitter>
+			<description><![CDATA[Description]]></description>
+			<url><![CDATA[http://example.com]]></url>
+		</twitter>
+	</content>
+	
+	<content id="test">
+		<open-graph>
+			<title><![CDATA[Test]]></title>
+			<description><![CDATA[Description]]></description>
+			<image><![CDATA[http://path.to.image]]></image>
+			<url><![CDATA[http://example.com]]></url>
+		</open-graph>
+		<twitter>
+			<description><![CDATA[Description]]></description>
+			<url><![CDATA[http://example.com]]></url>
+		</twitter>
+	</content>
+</data>

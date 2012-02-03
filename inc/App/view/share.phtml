@@ -1,0 +1,7 @@
+<html>
+<head>
+	<? foreach($open_graph as $key => $val): ?>
+		 <meta property="og:<?=str_replace('-', ':', $key)?>" content="<?=$val?>"/>
+	<? endforeach; ?>
+</head>
+</html>
