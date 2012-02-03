@@ -54,6 +54,11 @@ class Fz_Model
 		return explode('/', $this->get_request());
 	}
 	
+	public function is_ajax_request()
+	{
+		return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+	}
+	
 	public function is_valid_string($val) 
 	{
 		return isset($val) && $val && $val != 'null' & $val != '';

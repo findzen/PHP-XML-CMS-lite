@@ -43,7 +43,9 @@ class Fz_XML_Model extends Fz_Model
 
 		$data['base_href'] 	= $this->get_base_href();
 		$data['href'] 		= $this->get_href();
-		$data['nav'] 		= $this->_get_nav();	
+		$data['ajax']		= $this->is_ajax_request();
+		$data['global']		= $this->_get_global_data();
+		$data['nav'] 		= $this->_get_nav();
 		
 		return $data;
 	}
@@ -98,6 +100,18 @@ class Fz_XML_Model extends Fz_Model
 	{
 		// xpath
 		$xpath = '//*[@id="'.$id.'"]';
+		$match = $this->_content_xml->xpath($xpath);
+				
+		if(!isset($match[0]))
+			return null;
+	
+		return simpleXMLToArray($match[0]);
+	}
+	
+	private function _get_global_data() 
+	{
+		// xpath
+		$xpath = '//global';
 		$match = $this->_content_xml->xpath($xpath);
 				
 		if(!isset($match[0]))
