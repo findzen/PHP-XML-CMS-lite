@@ -1,11 +1,9 @@
 <?php
 
-ini_set('log_errors', '1');
-ini_set('display_errors', '0');
-ini_set('include_path', './inc');
+ini_set('include_path', 'inc');
 
 require_once 'App.php';
 
-$app = new App('inc/App/data/sitemap.xml', 'inc/App/data/content.xml');
+$app = new App('inc/app/data/sitemap.xml', 'inc/app/data/content.xml');
 
 /* EOF */

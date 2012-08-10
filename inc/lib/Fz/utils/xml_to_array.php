@@ -51,8 +51,8 @@
  *                                            defaults to null. 
  * @return array the resulting array. 
  */ 
-function simpleXMLToArray(SimpleXMLElement $xml, $attributesKey = null, $childrenKey = null, $valueKey = null){ 
-
+function xml_to_array(SimpleXMLElement $xml, $attributesKey = null, $childrenKey = null, $valueKey = null)
+{ 
     if($childrenKey && !is_string($childrenKey))
 		$childrenKey = '@children';
 
@@ -63,6 +63,7 @@ function simpleXMLToArray(SimpleXMLElement $xml, $attributesKey = null, $childre
 		$valueKey = '@values'; 
 
     $return = array(); 
+    //$name = str_replace('-', '_', $xml->getName()); // i don't think this is being used
     $_value = trim((string) $xml); 
 
     if(!strlen($_value))
@@ -81,10 +82,7 @@ function simpleXMLToArray(SimpleXMLElement $xml, $attributesKey = null, $childre
 
     foreach($xml->children() as $elementName => $child)
 	{ 
-		// replace dashes with underscore
-		$elementName = str_replace('-', '_', $elementName);
-		
-        $value = simpleXMLToArray($child, $attributesKey, $childrenKey, $valueKey);
+        $value = xml_to_array($child, $attributesKey, $childrenKey, $valueKey);
 		
         if(isset($children[$elementName]))
 		{

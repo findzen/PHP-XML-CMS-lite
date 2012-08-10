@@ -1,9 +1,9 @@
 <?php
 
-require_once 'lib/Fz/Share/Model.php';
-require_once 'lib/Fz/Share/Controller.php';
+require_once 'share/Model.php';
+require_once 'share/Controller.php';
 
-class Share
+class Fz_Share
 {
 	public function __construct($path_to_share_xml, $path_to_share_view)
 	{

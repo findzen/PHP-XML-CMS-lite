@@ -9,7 +9,7 @@ class Fz_Controller
 		$this->model = $model;
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// API
 	
 	public function request($params)
@@ -20,16 +20,21 @@ class Fz_Controller
 	public function render($file, $data)
 	{
 		if(!file_exists($file))
-			$this->abort();
+		{
+			die( 'File not found ' . $file );
+		}
 		
 		extract($data);
+
 		include $file;
 	}
 	
 	public function redirect($url)
 	{
 		if(!isset($url))
+		{
 			$this->abort();
+		}
 		
 		header('Location: '.$url);
 	}

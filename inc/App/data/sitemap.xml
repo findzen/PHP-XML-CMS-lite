@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sitemap>
+
+	<!--
+		This file serves as a map of urls to ids. Requests are routed through the Fz_XML_Controller, 
+		which asks the Fz_XML_Model to retrieve data for the request.
+		
+		The Fz_XML_Model searches this XML file for a match based on the structure defined here. 
+		The request is converted to an array split by forward slashes ('/'), so a request of 
+		
+			/foo/bar
+		
+		would be converted into:
+		
+		 	[ 'foo', 'bar' ]
+		
+		and the Fz_XML_Model would search this file for nodes with href values matching the request:
+		
+		 	<page id="my-foo-id" href="foo" title="My Foo Title">
+				<page id="my-bar-id" href="bar" title="My Bar Title"/>
+			</page>
+		
+		When a match is found, the Fz_XML_Model does one of two things:
+		
+			1. 	If the match contains a redirect attribute, this value is passed back to the
+				Fz_XML_Controller which handles the redirect.
+				
+				<page href="redirect-example" redirect="foo/bar"/>
+				
+			2.	If the match does not contain a redirect, the Fz_XML_Model searches the content XML
+				for a matching id and returns this data to the Fz_XML_Controller along with global variables
+				(declared in the content XML) and this site map (for building the navigation).
+	-->
+	
 	<page id="home" href="/" title="Site name">
 		<page href="redirect-example" redirect="hello-world" title="Redirect example"/>
 		<page id="hello-world" href="hello-world" title="Hello, world!"/>

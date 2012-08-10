@@ -1,8 +1,8 @@
 <?php
 
-require_once 'lib/Fz/Model.php';
+require_once __DIR__ . '/../Model.php';
 
-class Share_Model extends Fz_Model 
+class Share_Model extends Fz_Model
 {
 	const OPEN_GRAPH 	= 'open-graph';
 	const TWITTER 		= 'twitter';
@@ -19,7 +19,7 @@ class Share_Model extends Fz_Model
 		parent::__construct();
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// API
 	
 	public function get_open_graph_data($id = null) 
@@ -42,7 +42,7 @@ class Share_Model extends Fz_Model
 		return 'http://twitter.com/intent/tweet?text='.urlencode($text).'&url='.urlencode($url);
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// PRIVATE
 	
 	private function _get_data($type, $id = null) 

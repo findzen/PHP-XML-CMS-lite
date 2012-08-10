@@ -1,6 +1,6 @@
 <?php
 
-require_once 'lib/Fz/XML/Model.php';
+require_once 'lib/fz/xml/Model.php';
 
 class App_Model extends Fz_XML_Model 
 {
@@ -9,7 +9,7 @@ class App_Model extends Fz_XML_Model
 		parent::__construct($sitemap_xml_path, $content_xml_path);
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// API
 	
 	public function get_data($params) 
@@ -17,7 +17,7 @@ class App_Model extends Fz_XML_Model
 		return parent::get_data($params);
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// PRIVATE
 }
 

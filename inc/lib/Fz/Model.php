@@ -11,7 +11,7 @@ class Fz_Model
 		$this->user_agent = new Fz_UserAgent();
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// API
 	
 	public function get_href()
@@ -48,10 +48,17 @@ class Fz_Model
 		return $request;
 	}
 	
-	public function get_request_params()
+	public function get_request_params($include_query_string = false)
 	{
+		$request = $this->get_request();
+		
+		if( !$include_query_string )
+		{
+			$request = preg_replace('/\?.*/', '', $request);
+		}
+		
 		// split by '/'
-		return explode('/', $this->get_request());
+		return explode('/', $request);
 	}
 	
 	public function is_ajax_request()

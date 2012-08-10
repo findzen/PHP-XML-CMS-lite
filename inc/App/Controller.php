@@ -1,6 +1,6 @@
 <?php
 
-require_once 'lib/Fz/XML/Controller.php';
+require_once 'lib/fz/xml/Controller.php';
 
 class App_Controller extends Fz_XML_Controller 
 {
@@ -12,7 +12,7 @@ class App_Controller extends Fz_XML_Controller
 		parent::__construct($model);
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// API
 	
 	public function request($request)
@@ -20,7 +20,7 @@ class App_Controller extends Fz_XML_Controller
 		parent::request($request);
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// PRIVATE
 }
 

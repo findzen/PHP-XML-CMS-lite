@@ -1,6 +1,6 @@
 <?php
 
-require_once 'lib/Fz/Controller.php';
+require_once __DIR__ . '/../Controller.php';
 
 class Share_Controller extends Fz_Controller 
 {
@@ -12,7 +12,7 @@ class Share_Controller extends Fz_Controller
 		parent::__construct($model);
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// API
 	
 	public function request($params)
@@ -50,7 +50,7 @@ class Share_Controller extends Fz_Controller
 		}
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// PRIVATE
 	
 	private function _get_redirect($site, $data, $id)

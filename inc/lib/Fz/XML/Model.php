@@ -1,7 +1,7 @@
 <?php
 
-require_once 'lib/Fz/Model.php';
-require_once 'lib/Fz/utils/simpleXMLToArray.php';
+require_once __DIR__ . '/../Model.php';
+require_once __DIR__ . '/../utils/xml_to_array.php';
 
 class Fz_XML_Model extends Fz_Model
 {
@@ -19,7 +19,7 @@ class Fz_XML_Model extends Fz_Model
 		parent::__construct();
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// API
 	
 	public function get_data($params) 
@@ -50,13 +50,13 @@ class Fz_XML_Model extends Fz_Model
 		return $data;
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// PRIVATE
 	
 	private function _get_nav()
 	{
 		$match 	= $this->_sitemap_xml->xpath('/*');
-		$data 	= simpleXMLToArray($match[0]);
+		$data 	= xml_to_array($match[0]);
 		
 		return $this->_parse_href($data['page']);
 	}
@@ -105,7 +105,7 @@ class Fz_XML_Model extends Fz_Model
 		if(!isset($match[0]))
 			return null;
 	
-		return simpleXMLToArray($match[0]);
+		return xml_to_array($match[0]);
 	}
 	
 	private function _get_global_data() 
@@ -117,7 +117,7 @@ class Fz_XML_Model extends Fz_Model
 		if(!isset($match[0]))
 			return null;
 	
-		return simpleXMLToArray($match[0]);
+		return xml_to_array($match[0]);
 	}
 	
 }

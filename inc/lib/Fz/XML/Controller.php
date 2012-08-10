@@ -1,6 +1,6 @@
 <?php
 
-require_once 'lib/Fz/Controller.php';
+require_once __DIR__ . '/../Controller.php';
 require_once 'Model.php';
 
 class Fz_XML_Controller extends Fz_Controller 
@@ -13,7 +13,7 @@ class Fz_XML_Controller extends Fz_Controller
 		$this->request($this->model->get_request_params());
 	}
 	
-	  ///////////////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////////////
 	// API
 	
 	public function request($request)
